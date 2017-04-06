@@ -1,0 +1,20 @@
+{
+  "name": "jreuteler/silverstripe-geolocation-field",
+  "description": "TextField that reads and stores the geolocation position (latitude, longitude and accuracy).",
+  "type": "silverstripe-module",
+  "homepage": "https://github.com/jreuteler/silverstripe-geolocation-field",
+  "keywords": ["silverstripe", "module"],
+  "license": "",
+  "authors": [
+    {
+      "name": "Jan Reuteler",
+      "email": "janreuteler@icloud.com"
+    }
+  ],
+  "require": {
+    "silverstripe/framework": "~3.1",
+    "silverstripe/cms": "~3.1"
+  },
+  "prefer-stable": true,
+  "minimum-stability": "dev"
+}

@@ -1,0 +1,10 @@
+.geoLocation .third {
+    width: 33%;
+    float:left;
+}
+
+.geoLocationFieldControls {
+    width: 300px;
+    margin-top: 0;
+}
+

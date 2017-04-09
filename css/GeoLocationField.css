@@ -1,6 +1,5 @@
-.geoLocation .third {
-    width: 33%;
-    float:left;
+.field.geolocation input.hidden {
+    display: none;
 }
 
 .geoLocationFieldControls {
@@ -8,3 +7,7 @@
     margin-top: 0;
 }
 
+.geoLocation .third {
+    width: 33%;
+    float: left;
+}

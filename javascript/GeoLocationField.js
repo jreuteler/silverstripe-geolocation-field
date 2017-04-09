@@ -48,12 +48,10 @@ var options = {
     maximumAge: 0
 };
 
-var fields = jQuery('.field.geolocation input.text');
-
 
 function success(pos) {
     var crd = pos.coords;
-    fields.attr('value', crd.latitude + ',' + crd.longitude+','+crd.accuracy);
+    jQuery('.field.geolocation input.text.geolocation').attr('value', crd.latitude + ',' + crd.longitude + ',' + crd.accuracy);
     jQuery('.field.geolocation input.text.latitude').attr('value', crd.latitude);
     jQuery('.field.geolocation input.text.longitude').attr('value', crd.longitude);
     jQuery('.field.geolocation input.text.accuracy').attr('value', crd.accuracy);

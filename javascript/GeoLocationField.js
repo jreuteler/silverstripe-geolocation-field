@@ -5,7 +5,7 @@
 (function ($) {
     jQuery.entwine('ss.geolocation', function ($) {
 
-        jQuery('.field.geolocation input.text.geolocation').entwine({
+        jQuery('input.text.hidden.geolocation').entwine({
 
             onmatch: function () {
 
@@ -15,8 +15,6 @@
                 var valueEl = input.parent().find('.value-holder .value');
 
                 var refreshField = function () {
-
-                    console.log('refreshField');
                     hiddenInput.val('');
                     valueHolder.addClass('has-value');
                     updatePosition(input);
@@ -28,12 +26,12 @@
                 input.attr('data-position-set', 'true');
 
                 // only load current position on startup when field is empty
-                if( input.attr('value') == '') {
+                if (input.attr('value') == '') {
                     refreshField();
                 }
 
                 // refresh event
-                input.parent().find('a.refresh').click(function (e) {
+                input.parent().find('img.action.refresh').click(function (e) {
                     e.preventDefault();
                     refreshField();
                 });

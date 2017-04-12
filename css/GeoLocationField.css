@@ -2,12 +2,18 @@
     display: none;
 }
 
-.geoLocationFieldControls {
-    width: 300px;
-    margin-top: 0;
+img.geolocation.action.refresh {
+    cursor: pointer;
+    border: 0 !important;
+    background: none !important;
 }
 
-.geoLocation .third {
+.geolocation.fields {
+    min-width: 200px;
+}
+
+.geolocation.fields .third {
     width: 33%;
+    max-width: 100px;
     float: left;
 }

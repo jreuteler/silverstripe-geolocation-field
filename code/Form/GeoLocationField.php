@@ -111,6 +111,7 @@ class GeoLocationField extends FormField
 
 
         $data = array(
+            'Path' => GEOLOCATIONFIELD_DIR,
             'JSConfig' => htmlspecialchars(json_encode($jsConfig)),
             'GeoLocation' => array(
                 'Latitude' => $latitude,
@@ -118,12 +119,12 @@ class GeoLocationField extends FormField
                 'Accuracy' => $accuracy,
             ),
             'Fields' => array(
-                'Latitude' => NumericField::create($id . '_latitude', '', $latitude, 6)
-                    ->addExtraClass('no-change-track latitude')->setReadonly(true),
-                'Longitude' => NumericField::create($id . '_longitude', '', $longitude, 3)
-                    ->addExtraClass('no-change-track longitude')->setReadonly(true),
-                'Accuracy' => NumericField::create($id . '_accuracy', '', $accuracy, 3)
-                    ->addExtraClass('no-change-track accuracy')->setReadonly(true),
+                'Latitude' => NumericField::create($id . '_latitude', '', $latitude)->setReadonly(true)
+                    ->addExtraClass('latitude'),
+                'Longitude' => NumericField::create($id . '_longitude', '', $longitude)->setReadonly(true)
+                    ->addExtraClass('longitude'),
+                'Accuracy' => NumericField::create($id . '_accuracy', '', $accuracy)->setReadonly(true)
+                    ->addExtraClass('accuracy'),
 
             )
         );

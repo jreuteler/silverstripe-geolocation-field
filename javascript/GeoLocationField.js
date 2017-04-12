@@ -16,13 +16,10 @@
 
                 var refreshField = function () {
 
-                    if( input.attr('value') == '') {
-                        // only load current position when field is empty
-                        hiddenInput.val('');
-                        valueHolder.addClass('has-value');
-                        updatePosition();
-                    }
-
+                    console.log('refreshField');
+                    hiddenInput.val('');
+                    valueHolder.addClass('has-value');
+                    updatePosition(input);
                 };
 
                 // Prevent from loading itself more than once
@@ -30,8 +27,10 @@
                     return;
                 input.attr('data-position-set', 'true');
 
-                // init
-                refreshField();
+                // only load current position on startup when field is empty
+                if( input.attr('value') == '') {
+                    refreshField();
+                }
 
                 // refresh event
                 input.parent().find('a.refresh').click(function (e) {
@@ -46,20 +45,20 @@
 })(jQuery);
 
 
-// TODO: rewrite
-var options = {
-    enableHighAccuracy: true,
-    timeout: 5000,
-    maximumAge: 0
-};
+function updatePosition(field) {
+    navigator.geolocation.getCurrentPosition(function (position) {
+        successForField(field, position);
+    }, error);
+}
 
 
-function success(pos) {
+function successForField(field, pos) {
+
     var crd = pos.coords;
-    jQuery('.field.geolocation input.text.geolocation').attr('value', crd.latitude + ',' + crd.longitude+','+crd.accuracy);
-    jQuery('.field.geolocation input.text.latitude').attr('value', crd.latitude);
-    jQuery('.field.geolocation input.text.longitude').attr('value', crd.longitude);
-    jQuery('.field.geolocation input.text.accuracy').attr('value', crd.accuracy);
+    field.attr('value', crd.latitude + ',' + crd.longitude + ',' + crd.accuracy);
+    field.parent().find('input.text.latitude').attr('value', crd.latitude);
+    field.parent().find('input.text.longitude').attr('value', crd.longitude);
+    field.parent().find('input.text.accuracy').attr('value', crd.accuracy);
 };
 
 function error(err) {
@@ -67,6 +66,3 @@ function error(err) {
     return false;
 };
 
-function updatePosition() {
-    return navigator.geolocation.getCurrentPosition(success, error, options);
-}

@@ -24,12 +24,6 @@
                 if (input.attr('data-position-set') == 'true')
                     return;
                 input.attr('data-position-set', 'true');
-
-                // only load current position on startup when field is empty
-                if (input.attr('value') == '') {
-                    refreshField();
-                }
-
                 // refresh event
                 input.parent().find('img.action.refresh').click(function (e) {
                     e.preventDefault();

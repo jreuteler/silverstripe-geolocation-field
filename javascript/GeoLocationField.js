@@ -24,6 +24,7 @@
                 if (input.attr('data-position-set') == 'true')
                     return;
                 input.attr('data-position-set', 'true');
+
                 // refresh event
                 input.parent().find('img.action.refresh').click(function (e) {
                     e.preventDefault();
@@ -36,13 +37,18 @@
     });
 })(jQuery);
 
+var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+};
+
 
 function updatePosition(field) {
     navigator.geolocation.getCurrentPosition(function (position) {
         successForField(field, position);
-    }, error);
+    }, error, options);
 }
-
 
 function successForField(field, pos) {
 

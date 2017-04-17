@@ -7,7 +7,6 @@ $Controls.Proxy
      // TODO: implement/add map-preview
     -->
 </div>
-<img src="{$Path}/images/update_position_icon.png" alt="Refresh Position" width="32" height="32" class="geolocation action refresh"/>
 
 
     <div class="geolocation fields">
@@ -23,7 +22,8 @@ $Controls.Proxy
         </div>
         <div class="third accuracy">
             <label class="left full" for="$Fields.Accuracy.ID">Accuracy</label>
-            <span class="value $AccuracyLevel" alt="{$Fields.Accuracy.Value}m"></span>
+            <span class="value $AccuracyLevel" alt="Accuracy: {$Fields.Accuracy.Value}m"></span>
             $Fields.Accuracy
         </div>
     </div>
+<img src="{$Path}/images/update_position_icon.png" alt="Refresh Position" width="32" height="32" class="geolocation action refresh"/>

@@ -90,13 +90,11 @@ class GeoLocationField extends FormField
     public function getAccuracyLevel()
     {
         $values = explode(',', $this->Value());
-
         $accuracy = (int) @$values[2];
 
         if($accuracy == 0) {
             return 'missing';
-        }
-        if($accuracy < 10) {
+        } else if($accuracy < 10) {
             return 'good';
         } else if($accuracy < 50) {
             return 'average';

@@ -57,6 +57,20 @@ function successForField(field, pos) {
     field.parent().find('input.text.latitude').attr('value', crd.latitude);
     field.parent().find('input.text.longitude').attr('value', crd.longitude);
     field.parent().find('input.text.accuracy').attr('value', crd.accuracy);
+
+    var accuracySpan = field.parent().find('input.text.accuracy').parent().find('.status');
+    accuracySpan.removeClass('missing good average bad');
+
+    var accuracyClass = 'missing';
+    if (crd.accur > 0 && crd.accuracy < 25) {
+        accuracyClass = 'good';
+    } else if (crd.accuracy < 50) {
+        accuracyClass = 'average';
+    } else {
+        accuracyClass = 'bad';
+    }
+    accuracySpan.addClass(accuracyClass);
+
 };
 
 function error(err) {

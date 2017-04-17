@@ -3,9 +3,12 @@
 }
 
 img.geolocation.action.refresh {
+    margin: 0 auto;
+    display: block;
     cursor: pointer;
     border: 0 !important;
     background: none !important;
+    padding: 4px;
 }
 
 .geolocation.fields {
@@ -14,7 +17,7 @@ img.geolocation.action.refresh {
 
 .geolocation.fields .third {
     width: 33%;
-    max-width: 100px;
+    max-width: 150px;
     float: left;
 }
 
@@ -28,6 +31,31 @@ img.geolocation.action.refresh {
 **/
 @media (max-width: 800px) {
 
+    .geolocation.fields {
+        min-width: 140px;
+    }
+
+    .geolocation.fields .third{
+        width: 50%;
+    }
+
+    .geolocation.fields .third.accuracy{
+        width: 94%;
+        max-width: 100%;
+        clear:left;
+    }
+
+    .geolocation .accuracy .value {
+        clear: left;
+        display: block;
+        width: 100%;
+        height: 4px;
+        margin-top: 4px;
+        margin-bottom: 4px;
+
+    }
+
+
     .geolocation label.full {
         display: none;
     }
@@ -40,11 +68,6 @@ img.geolocation.action.refresh {
         display: none;
     }
 
-    .geolocation .accuracy .value {
-        display: block;
-        width: 12px;
-        height:12px;
-    }
 
     .geolocation span.good {
         text-indent: -999em;

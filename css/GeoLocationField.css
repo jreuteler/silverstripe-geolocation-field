@@ -17,3 +17,48 @@ img.geolocation.action.refresh {
     max-width: 100px;
     float: left;
 }
+
+
+.geolocation  label.mobile {
+    display: none;
+}
+
+/**
+ @media only screen and (max-width: 500px) {
+**/
+@media (max-width: 800px) {
+
+    .geolocation label.full {
+        display: none;
+    }
+
+    .geolocation label.mobile {
+        display: block;
+    }
+
+    .geolocation input.accuracy {
+        display: none;
+    }
+
+    .geolocation .accuracy .value {
+        display: block;
+        width: 12px;
+        height:12px;
+    }
+
+    .geolocation span.good {
+        text-indent: -999em;
+        background-color: green;
+    }
+
+    .geolocation span.average {
+        text-indent: -999em;
+        background-color: orange;
+    }
+
+    .geolocation span.bad {
+        text-indent: -999em;
+        background-color: red;
+    }
+
+}

@@ -11,13 +11,19 @@ $Controls.Proxy
 
 
     <div class="geolocation fields">
-        <div class="third">
-            <label class="left" for="$Fields.Latitude.ID">Latitude</label> $Fields.Latitude
+        <div class="third latitude">
+            <label class="left full" for="$Fields.Latitude.ID">Latitude</label>
+            <label class="left mobile" for="$Fields.Latitude.ID">Lat</label>
+            $Fields.Latitude
         </div>
-        <div class="third">
-            <label class="left" for="$Fields.Longitude.ID">Longitude</label> $Fields.Longitude
+        <div class="third longitude">
+            <label class="left full" for="$Fields.Longitude.ID">Longitude</label>
+            <label class="left mobile" for="$Fields.Longitude.ID">Lon</label>
+            $Fields.Longitude
         </div>
-        <div class="third">
-            <label class="left" for="$Fields.Accuracy.ID">Accuracy</label> $Fields.Accuracy
+        <div class="third accuracy">
+            <label class="left full" for="$Fields.Accuracy.ID">Accuracy</label>
+            <span class="value $AccuracyLevel" alt="{$Fields.Accuracy.Value}m"></span>
+            $Fields.Accuracy
         </div>
     </div>

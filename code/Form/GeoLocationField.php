@@ -94,7 +94,7 @@ class GeoLocationField extends FormField
 
         if($accuracy == 0) {
             return 'missing';
-        } else if($accuracy < 10) {
+        } else if($accuracy < 25) {
             return 'good';
         } else if($accuracy < 50) {
             return 'average';

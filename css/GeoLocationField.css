@@ -42,7 +42,7 @@
 @media (max-width: 800px) {
 
     .geolocation.fields {
-        min-width: 140px;
+        min-width: 80px;
     }
 
     .geolocation.fields .latitude,

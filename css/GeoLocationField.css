@@ -1,5 +1,6 @@
 .geolocation.fields {
     max-width: 400px;
+    padding-right: 10px;
 }
 
 .geolocation.fields .position

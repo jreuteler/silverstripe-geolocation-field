@@ -120,6 +120,7 @@ class GeoLocationField extends FormField
         Requirements::javascript(GEOLOCATIONFIELD_DIR . '/javascript/GeoLocationField.js');
         Requirements::css(GEOLOCATIONFIELD_DIR . '/css/GeoLocationField.css');
 
+        Requirements::javascript(GEOLOCATIONFIELD_DIR . '/vendor/countdown/jquery.countdown360.min.js');
         $jsConfig = array_merge($this->jsConfig, $this->jsConfigOverrides);
         $id = $this->ID();
         $geoLocation = DBField::create_field('SS_GeoLocation', $this->Value(), 'GeoLocation');

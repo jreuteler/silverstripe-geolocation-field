@@ -2,12 +2,8 @@
 
 <!-- controls.proxy -->
 $Controls.Proxy
-<div class="geoLocationFieldPreview">
-    <!--
-     // TODO: implement/add map-preview
-    -->
-</div>
 
+<div class="countdown-container"></div>
 
 <div class="geolocation fields">
     <div class="position latitude">
